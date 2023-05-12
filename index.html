@@ -1,20 +1,83 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Event Challenges: Challenge 30</title>
+    <title>Homepage</title>
     <style>
-        body { height: 3000px; }
-        .one { background-color: beige; transition: all3s; }
+        body { height: 2000px; background-color:darkslategray;}
+        .one { background-color:darkgreen; transition: all3s; }
         .two { background-color: blueviolet; transition: all3s; }
         .three { background-color: coral; transition: all3s; }
-        .four { background-color: cornflowerblue; transition: all3s; }
+        .four { background-color: rgb(68, 113, 196); transition: all3s; }
         .five { background-color: darkgoldenrod; transition: all3s; }
-        h1 {text-align: center;}
-        p {text-align: center;}
-
+        h1 {text-align: center; color:antiquewhite}
+        p {text-align: center; color:antiquewhite}
+        .btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: black;
+            background-color: hotpink;
+            border: none;
+            border-radius: 5px;
+            box-shadow:
+              7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+        }
+        .container {
+            height: 500px;
+            position: relative;
+        }
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .btn:active {
+            box-shadow:
+              7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+            transform: translateY(4px);
+            /* Moving button 4px to y-axis */
+        }
     </style>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>Welcome to Scott Knudsen's web page</p>
+    <h1>Hello World</h1>
+    <p>Welcome to Scott Knudsen's web page</p>
+    <div class="container">
+        <div class="vertical-center">
+            <button class="btn">Boop</button>
+        </div>
+    </div>
+    <script>
+        var clickCount = 0;
+        var bodyTag = document.querySelector('body');
+        window.addEventListener('click', function(){
+            clickCount = clickCount + 1;
+            switch(true){
+                case clickCount % 5 == 1: bodyTag.className="one"; break;
+                case clickCount % 5 == 2: bodyTag.className="two"; break;
+                case clickCount % 5 == 3: bodyTag.className="three"; break;
+                case clickCount % 5 == 4: bodyTag.className="four"; break;
+                case clickCount % 5 == 0: bodyTag.className="five"; break;
+            }
+        });
+        window.addEventListener('scroll', function(){
+            pageTop = window.pageYOffset;
+
+            document.body.style.backgroundColor = 'rgb(' + (pageTop* 135/2000) + ', ' + (pageTop* 206/2000) + ', ' + (pageTop* 235/2000) + ')';
+            // switch(true){
+            //     case pageTop < 500: bodyTag.className="one"; break;
+            //     case pageTop < 1000: bodyTag.className="two"; break;
+            //     case pageTop < 1500: bodyTag.className="three"; break;
+            //     case pageTop < 2000: bodyTag.className="four"; break;
+            //     default: bodyTag.className="five";
+
+            // }
+
+        });
+    </script>
 </body>
