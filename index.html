@@ -47,24 +47,24 @@
 <body>
     <h1>Hello World</h1>
     <p>Welcome to Scott Knudsen's web page</p>
-    <div class="container">
+    <!-- <div class="container">
         <div class="vertical-center">
             <button class="btn">Boop</button>
         </div>
-    </div>
+    </div> -->
     <script>
-        var clickCount = 0;
-        var bodyTag = document.querySelector('body');
-        window.addEventListener('click', function(){
-            clickCount = clickCount + 1;
-            switch(true){
-                case clickCount % 5 == 1: bodyTag.className="one"; break;
-                case clickCount % 5 == 2: bodyTag.className="two"; break;
-                case clickCount % 5 == 3: bodyTag.className="three"; break;
-                case clickCount % 5 == 4: bodyTag.className="four"; break;
-                case clickCount % 5 == 0: bodyTag.className="five"; break;
-            }
-        });
+        // var clickCount = 0;
+        // var bodyTag = document.querySelector('body');
+        // window.addEventListener('click', function(){
+        //     clickCount = clickCount + 1;
+        //     switch(true){
+        //         case clickCount % 5 == 1: bodyTag.className="one"; break;
+        //         case clickCount % 5 == 2: bodyTag.className="two"; break;
+        //         case clickCount % 5 == 3: bodyTag.className="three"; break;
+        //         case clickCount % 5 == 4: bodyTag.className="four"; break;
+        //         case clickCount % 5 == 0: bodyTag.className="five"; break;
+        //     }
+        // });
         window.addEventListener('scroll', function(){
             pageTop = window.pageYOffset;
 
