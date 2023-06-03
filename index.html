@@ -3,15 +3,22 @@
     <meta charset="UTF-8">
     <title>Homepage</title>
     <style>
-        body { height: 2000px; background-color:darkslategray;}
-        .one { background-color:darkgreen; transition: all3s; }
+        body { height: 3000px; background-color:black;}
+        /* .one { background-color:darkgreen; transition: all3s; }
         .two { background-color: blueviolet; transition: all3s; }
         .three { background-color: coral; transition: all3s; }
         .four { background-color: rgb(68, 113, 196); transition: all3s; }
-        .five { background-color: darkgoldenrod; transition: all3s; }
+        .five { background-color: darkgoldenrod; transition: all3s; } */
         h1 {text-align: center; color:antiquewhite}
         p {text-align: center; color:antiquewhite}
-        .btn {
+        #animate {
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        background-color: white;
+        left: 50px;
+        }
+        /* .btn {
             padding: 15px 40px;
             font-size: 16px;
             text-align: center;
@@ -23,8 +30,8 @@
             border-radius: 5px;
             box-shadow:
               7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-        }
-        .container {
+        } */
+        /* .container {
             height: 500px;
             position: relative;
         }
@@ -35,18 +42,19 @@
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-        }
-        .btn:active {
+        } */
+        /* .btn:active {
             box-shadow:
               7px 6px 28px 1px rgba(0, 0, 0, 0.24);
             transform: translateY(4px);
             /* Moving button 4px to y-axis */
-        }
+        /* } */
     </style>
 </head>
 <body>
     <h1>Hello World</h1>
     <p>Welcome to Scott Knudsen's web page</p>
+    <div id ="animate"></div>
     <!-- <div class="container">
         <div class="vertical-center">
             <button class="btn">Boop</button>
@@ -68,7 +76,12 @@
         window.addEventListener('scroll', function(){
             pageTop = window.pageYOffset;
 
-            document.body.style.backgroundColor = 'rgb(' + (pageTop* 135/2000) + ', ' + (pageTop* 206/2000) + ', ' + (pageTop* 235/2000) + ')';
+            // Change background color
+            document.body.style.backgroundColor = 'rgb(' + (pageTop* 135/3000) + ', ' + (pageTop* 206/3000) + ', ' + (pageTop* 235/3000) + ')';
+
+            // Move stuff
+            const elem = document.getElementById("animate");
+            elem.style.left = pageTop + 50 + "px";
             // switch(true){
             //     case pageTop < 500: bodyTag.className="one"; break;
             //     case pageTop < 1000: bodyTag.className="two"; break;
